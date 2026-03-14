@@ -1,4 +1,4 @@
-import type { InvoiceData } from "@/types/invoice";
+import type { InvoiceData } from "@/types";
 import { formatCurrency, formatDate, formatUnit } from "@/lib/format";
 
 export function InvoiceHTML({ invoice, profile, client, lines }: InvoiceData) {

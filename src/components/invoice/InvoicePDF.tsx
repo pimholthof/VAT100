@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Font,
 } from "@react-pdf/renderer";
-import type { InvoiceData } from "@/types/invoice";
+import type { InvoiceData } from "@/types";
 import { formatCurrency, formatDate, formatUnit } from "@/lib/format";
 
 // ---------------------------------------------------------------------------
