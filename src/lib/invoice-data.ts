@@ -1,5 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
-import type { InvoiceData } from "@/types/invoice";
+import type { InvoiceData } from "@/types";
 
 export async function getInvoiceData(invoiceId: string): Promise<InvoiceData> {
   const supabase = await createClient();

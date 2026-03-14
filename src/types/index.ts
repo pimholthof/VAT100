@@ -1,7 +1,6 @@
 /**
  * Central type re-exports.
- * Import from '@/types' for all database types.
- * Import from '@/types/invoice' for InvoiceData composition type.
+ * All types originate from '@/types/database' (single source of truth).
  */
 export type {
   InvoiceStatus,
@@ -22,6 +21,5 @@ export type {
   InvoiceUpdate,
   InvoiceLineUpdate,
   ReceiptUpdate,
+  InvoiceData,
 } from './database';
-
-export type { InvoiceData } from './invoice';

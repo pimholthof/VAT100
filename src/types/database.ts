@@ -129,3 +129,15 @@ export type ClientUpdate = Partial<Omit<Client, 'id'>> & { id: string };
 export type InvoiceUpdate = Partial<Omit<Invoice, 'id'>> & { id: string };
 export type InvoiceLineUpdate = Partial<Omit<InvoiceLine, 'id'>> & { id: string };
 export type ReceiptUpdate = Partial<Omit<Receipt, 'id'>> & { id: string };
+
+// ---------------------------------------------------------------------------
+// Composition types
+// ---------------------------------------------------------------------------
+
+/** Full invoice data bundle used by renderers (PDF / HTML) */
+export interface InvoiceData {
+  invoice: Invoice;
+  profile: Profile;
+  client: Client;
+  lines: InvoiceLine[];
+}
