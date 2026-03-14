@@ -240,9 +240,7 @@ const s = StyleSheet.create({
     flexDirection: "row",
     gap: 32,
   },
-  footerCol: {
-    marginRight: 32,
-  },
+  footerCol: {},
 });
 
 // ---------------------------------------------------------------------------

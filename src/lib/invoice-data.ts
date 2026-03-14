@@ -23,6 +23,10 @@ export async function getInvoiceData(invoiceId: string): Promise<InvoiceData> {
     throw new Error("Invoice not found");
   }
 
+  if (invoice.user_id !== user.id) {
+    throw new Error("Unauthorized");
+  }
+
   const [profileResult, clientResult, linesResult] = await Promise.all([
     supabase.from("profiles").select("*").eq("id", user.id).single(),
     supabase.from("clients").select("*").eq("id", invoice.client_id).single(),

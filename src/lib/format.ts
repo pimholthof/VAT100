@@ -6,7 +6,10 @@ export function formatCurrency(amount: number): string {
 }
 
 export function formatDate(dateStr: string): string {
-  const date = new Date(dateStr);
+  // Append T12:00:00 to date-only strings ("2024-01-15") to prevent
+  // timezone-boundary shifts (UTC midnight → previous day in CET).
+  const safe = dateStr.includes("T") ? dateStr : `${dateStr}T12:00:00`;
+  const date = new Date(safe);
   return new Intl.DateTimeFormat("nl-NL", {
     day: "2-digit",
     month: "2-digit",
